@@ -123,11 +123,15 @@ for (let i = 0; i < numOfPasswords; i++) {
     })
 
     // upate tooltip text after leaving
-    function revertTooltipText (password) {
-        password.tooltipEl.textContent = "Copy password"
-        password.tooltipEl.style.visibility = "hidden"
+    function revertTooltipText() {
+        if (currentPassword.tooltipEl.style.visibility = "visible") {
+            currentPassword.tooltipEl.textContent = "Copy password"
+            currentPassword.tooltipEl.style.visibility = "hidden"
+        }
+
     }
-    currentPassword.copyBtnEl.addEventListener("mouseleave", () => revertTooltipText(currentPassword))
-    currentPassword.copyBtnEl.addEventListener("focusout", () => revertTooltipText(currentPassword))
+    currentPassword.copyBtnEl.addEventListener("mouseleave", () => revertTooltipText())
+    currentPassword.copyBtnEl.addEventListener("focusout", () => revertTooltipText())
+    setTimeout(revertTooltipText(), 1000)
 
 }
