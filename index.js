@@ -120,6 +120,7 @@ for (let i = 0; i < numOfPasswords; i++) {
 
         // update tooltip text
         currentPassword.tooltipEl.textContent = "Copied!"
+        setTimeout(revertTooltipText, 700)
     })
 
     // upate tooltip text after leaving
@@ -132,6 +133,4 @@ for (let i = 0; i < numOfPasswords; i++) {
     }
     currentPassword.copyBtnEl.addEventListener("mouseleave", () => revertTooltipText())
     currentPassword.copyBtnEl.addEventListener("focusout", () => revertTooltipText())
-    setTimeout(revertTooltipText(), 1000)
-
 }
