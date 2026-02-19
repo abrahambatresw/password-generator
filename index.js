@@ -9,6 +9,7 @@ const form = document.querySelector("form")
 const passwordLengthInput = document.getElementById("password-length-input")
 const includeNumbersInput = document.getElementById("include-numbers-input")
 const includeSymbolsInput = document.getElementById("include-symbols-input")
+const passwordGenerationAnnouncer = document.getElementById("password-generation-announcer")
 let password = {}
 
 document.querySelectorAll(".password-container").forEach((passwordContainer, index) => {
@@ -103,19 +104,31 @@ document.querySelector('input[type="submit"]').addEventListener("click", (e) => 
     e.preventDefault()
     form.reportValidity()
     updateData()
+    
     if (formIsValid) {
         for (let i = 0; i < numOfPasswords; i++) {
             password[i].textEl.textContent = password[i].string = generatePassword()
             password[i].copyBtnEl.style.display = "flex"
         }
+        passwordGenerationAnnouncer.textContent = ""
+        setTimeout(() => {
+            passwordGenerationAnnouncer.textContent = "Passwords have been generated."
+        }, 200);
+
     }
 })
 
 // copy password when clicking on button
 for (let i = 0; i < numOfPasswords; i++) {
     const currentPassword = password[i]
+
+    // show tooltip on hover and focus
     currentPassword.copyBtnEl.addEventListener("mouseenter", () => currentPassword.tooltipEl.style.visibility = "visible")
+    currentPassword.copyBtnEl.addEventListener("focus", () => currentPassword.tooltipEl.style.visibility = "visible")
+
+    // clicking on copy button
     currentPassword.copyBtnEl.addEventListener("click", () => {
+        // copy password to clipboard
         navigator.clipboard.writeText(currentPassword.string)
 
         // update tooltip text

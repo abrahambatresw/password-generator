@@ -28,22 +28,30 @@
                     </div>
                 </div>
             </div>
-            <input id="generate-passwords-btn" type="submit" value="Generate passwords"></input>
+            <div class="submit-btn-wrapper">
+                <input id="generate-passwords-btn" type="submit" value="Generate passwords"></input>
+                <span id="password-generation-announcer" aria-live="polite"></span>
+            </div>
+
         </form>
         <div class="passwords-display-section">
             <div class="password-containers-wrapper">
                 <div class="password-container" id="password-1">
                     <p></p>
-                    <button aria-label="Copy password" type="button">
+                    <button aria-labelledby="tooltip-1" type="button">
                         <img aria-hidden="true" src="assets/copy.svg" alt="" />
-                        <span class="tooltip" aria-live="polite">Copy password</span>
+                        <div class="tooltip-wrapper" aria-live="polite">
+                            <span id="tooltip-1" class="tooltip" aria-live="polite">Copy password</span>
+                        </div>
                     </button>
                 </div>
                 <div class="password-container" id="password-2">
                     <p></p>
-                    <button aria-label="Copy password" type="button">
+                    <button aria-labelledby="tooltip-2" type="button">
                         <img aria-hidden="true" src="assets/copy.svg" alt="" />
-                        <span class="tooltip" aria-live="polite">Copy password</span>
+                        <div class="tooltip-wrapper" aria-live="polite">
+                            <span id="tooltip-2" class="tooltip" >Copy password</span>
+                        </div>
                     </button>
                 </div>
             </div>
