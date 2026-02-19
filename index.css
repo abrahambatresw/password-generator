@@ -1,0 +1,241 @@
+/*************** css variables ***************/
+
+:root {
+    --dark-text-icon-primary: #ffffff;
+    --dark-text-icon-secondary: #D5D4D8;
+    --dark-text-icon-emphasis: #55F991;
+    
+    --light-text-icon-primary: #000000;
+    
+    --dark-border-input: rgba(255, 255, 255, 0.4);
+    --dark-border-divider: #2F3E53;
+    
+    --dark-bg-primary: #1F2937;
+    --dark-bg-secondary: #273549;
+    --light-bg-primary: #dfdfdf;
+    
+    --light-bg-emphasis: #11CA8C;
+    --light-bg-emphasis-hover: #10B981;
+    
+    --transparent-button-hover: rgba(255, 255, 255, 0.1)
+    
+}
+
+/*************** general styles ***************/
+
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
+body {
+    padding: 64px 56px 48px 56px;
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-icon-secondary);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header, form, .passwords-display-section {
+    max-width: 600px;
+    width: 100%;
+}
+
+/*************** header ***************/
+
+
+.header {
+    margin-bottom: 56px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--dark-text-icon-primary);
+    margin-bottom: 12px;
+}
+
+.emphasis-text {
+    color: var(--dark-text-icon-emphasis);
+}
+
+.header p {
+    font-size: 20px;
+}
+
+/*************** form ***************/
+
+form {
+    margin-bottom: 56px;
+}
+
+.form-inputs {
+    display: flex;
+    margin-bottom: 44px;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.input-wrapper.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="number"] {
+    color: var(--dark-text-icon-primary);
+    box-sizing: border-box;
+    padding: 8px 12px;
+    height: 40px;
+    border: solid var(--dark-border-input) 1px;
+    background-color: var(--dark-bg-secondary);
+    border-radius: 6px;
+    min-width: 160px;
+}
+
+.input-wrapper.horizontal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    background-color: var(--dark-bg-secondary);
+    border-radius: 3px;
+    border: 1px solid var(--dark-border-input);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--dark-text-icon-primary);
+}
+
+input[type="checkbox"]:checked::after {
+    content: "";
+    background-image: url("assets/check.svg");
+    width: 14px;
+    height: 14px;
+    position: absolute;
+}
+
+input[type="submit"] {
+    border: none;
+    border-radius: 6px;
+    color: var(--light-text-icon-primary);
+    padding: 10px 16px;
+    background-color: var(--light-bg-emphasis);
+    letter-spacing: 0.01em;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--light-bg-emphasis-hover);
+}
+
+/*************** passwords output ***************/
+
+
+.passwords-display-section {
+    padding-top: 32px;
+    border-top: 1px solid var(--dark-border-divider);
+}
+
+.password-containers-wrapper {
+    display: flex;
+    gap: 24px;
+}
+
+.password-container {
+    width: 100%;
+    background-color: var(--dark-bg-secondary);
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 6px;
+    padding-left: 12px;
+    padding-right: 6px;
+}
+
+.password-container button {
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;    
+}
+
+.tooltip {
+    position: absolute;
+    color: var(--light-text-icon-primary);
+    background-color: var(--light-bg-primary);
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    bottom: 150%;
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--light-bg-primary) transparent transparent transparent;
+}
+
+.password-container button:hover {
+    background-color: var(--transparent-button-hover);
+}
+
+/*************** small breakpoint ***************/
+
+@media (max-width: 630px) {
+    .password-containers-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .form-inputs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .input-wrapper {
+        width: 100%;
+    }
+}

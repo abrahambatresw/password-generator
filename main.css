@@ -1,0 +1,74 @@
+:root {
+    --accent-color: #4ADF86;
+    --page-bg: #1F2937;
+    --secondary-text: #D5D4D8;
+    --surface-bg: #273549;
+    --white: #FFFFFF;
+    --divider: #2F3E53;
+}
+
+body {
+    margin: 0;
+    padding: 112px 56px;
+    background-color: var(--page-bg);
+    font-family: "Inter", sans-serif;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--white);
+    font-family: "Karla", sans-serif;
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.descriptive-text {
+    font-size: 20px;
+    color: var(--secondary-text);
+    margin-bottom: 48px;
+}
+
+button {
+    padding: .5rem 1rem;
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--page-bg);
+    border-radius: .375rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.divider {
+    height: .0625rem;
+    background-color: var(--divider);
+    margin-bottom: 2rem;
+}
+
+.passwords-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.password-wrapper {
+    width: 100%;
+    max-width: 13.5rem;
+    background-color: var(--surface-bg);
+    height: 2.5rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .375rem;
+}

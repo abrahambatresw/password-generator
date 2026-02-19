@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Generate a <span class="emphasis-text">random password</span></h1>
+            <p>Never use an insecure password again.</p>
+        </div>
+        <form>
+            <div class="form-inputs">
+                <div class="input-wrapper vertical password-length">
+                    <label for="password-length-input">Password length</label>
+                    <input id="password-length-input" type="number" name="password-length" min="5" max="30" required />
+                </div>
+                <div class="checkboxes">
+                    <div class="input-wrapper horizontal">
+                        <input id="include-numbers-input" type="checkbox" name="include-numbers" />
+                        <label for="include-numbers">Include numbers</label>
+                    </div>
+                    <div class="input-wrapper horizontal">
+                        <input id="include-symbols-input" type="checkbox" name="include-symbols" />
+                        <label for="include-symbols">Include symbols</label>
+                    </div>
+                </div>
+            </div>
+            <input id="generate-passwords-btn" type="submit" value="Generate passwords"></input>
+        </form>
+        <div class="passwords-display-section">
+            <div class="password-containers-wrapper">
+                <div class="password-container" id="password-1">
+                    <p></p>
+                    <button aria-label="Copy password" type="button">
+                        <img aria-hidden="true" src="assets/copy.svg" alt="" />
+                        <span class="tooltip" aria-live="polite">Copy password</span>
+                    </button>
+                </div>
+                <div class="password-container" id="password-2">
+                    <p></p>
+                    <button aria-label="Copy password" type="button">
+                        <img aria-hidden="true" src="assets/copy.svg" alt="" />
+                        <span class="tooltip" aria-live="polite">Copy password</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
