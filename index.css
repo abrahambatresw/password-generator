@@ -85,6 +85,7 @@ form {
     margin-bottom: 44px;
     align-items: flex-end;
     gap: 40px;
+    width: 100%;
 }
 
 .input-wrapper.vertical {
@@ -261,6 +262,10 @@ input[type="submit"]:hover {
     .form-inputs {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .input-wrapper.vertical {
+        width: 100%;
     }
     
     .input-wrapper {
