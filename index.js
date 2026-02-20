@@ -39,7 +39,7 @@ Object.values(password).forEach(password => password.copyBtnEl.style.display = "
 // function to update creation data
 function updateData() {
     formIsValid = form.checkValidity()
-    passwordLength = passwordLengthInput.value
+    passwordLength = Number(passwordLengthInput.value)
     includeNumbers = includeNumbersInput.checked
     includeSymbols = includeSymbolsInput.checked
 }
