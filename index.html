@@ -1,5 +1,8 @@
-<html>
+<html lang="en">
     <head>
+        <title>Random password generator</title>
+        
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css"><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7,55 +10,58 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="header">
-            <h1>Generate a <span class="emphasis-text">random password</span></h1>
-            <p>Never use an insecure password again.</p>
-        </div>
-        <form>
-            <div class="form-inputs">
-                <div class="input-wrapper vertical password-length">
-                    <label for="password-length-input">Password length</label>
-                    <input id="password-length-input" type="number" name="password-length" min="5" max="30" required />
-                </div>
-                <div class="checkboxes">
-                    <div class="input-wrapper horizontal">
-                        <input id="include-numbers-input" type="checkbox" name="include-numbers" />
-                        <label for="include-numbers-input">Include numbers</label>
+        <header>
+            <div class="header">
+                <h1>Generate a <span class="emphasis-text">random password</span></h1>
+                <p>Never use an insecure password again.</p>
+            </div>
+        </header>
+        <main>
+            <form>
+                <div class="form-inputs">
+                    <div class="input-wrapper vertical password-length">
+                        <label for="password-length-input">Password length</label>
+                        <input id="password-length-input" type="number" name="password-length" min="5" max="30" required />
                     </div>
-                    <div class="input-wrapper horizontal">
-                        <input id="include-symbols-input" type="checkbox" name="include-symbols" />
-                        <label for="include-symbols-input">Include symbols</label>
+                    <div class="checkboxes">
+                        <div class="input-wrapper horizontal">
+                            <input id="include-numbers-input" type="checkbox" name="include-numbers" />
+                            <label for="include-numbers-input">Include numbers</label>
+                        </div>
+                        <div class="input-wrapper horizontal">
+                            <input id="include-symbols-input" type="checkbox" name="include-symbols" />
+                            <label for="include-symbols-input">Include symbols</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-btn-wrapper">
+                    <input id="generate-passwords-btn" type="submit" value="Generate passwords"></input>
+                    <span id="password-generation-announcer" aria-live="polite"></span>
+                </div>
+            </form>
+            <div class="passwords-display-section">
+                <div class="password-containers-wrapper">
+                    <div class="password-container" id="password-1">
+                        <p></p>
+                        <button aria-labelledby="tooltip-1" type="button">
+                            <img aria-hidden="true" src="assets/copy.svg" alt="" />
+                            <div class="tooltip-wrapper" aria-live="polite">
+                                <span id="tooltip-1" class="tooltip" aria-live="polite">Copy password</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="password-container" id="password-2">
+                        <p></p>
+                        <button aria-labelledby="tooltip-2" type="button">
+                            <img aria-hidden="true" src="assets/copy.svg" alt="" />
+                            <div class="tooltip-wrapper" aria-live="polite">
+                                <span id="tooltip-2" class="tooltip" >Copy password</span>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="submit-btn-wrapper">
-                <input id="generate-passwords-btn" type="submit" value="Generate passwords"></input>
-                <span id="password-generation-announcer" aria-live="polite"></span>
-            </div>
-
-        </form>
-        <div class="passwords-display-section">
-            <div class="password-containers-wrapper">
-                <div class="password-container" id="password-1">
-                    <p></p>
-                    <button aria-labelledby="tooltip-1" type="button">
-                        <img aria-hidden="true" src="assets/copy.svg" alt="" />
-                        <div class="tooltip-wrapper" aria-live="polite">
-                            <span id="tooltip-1" class="tooltip" aria-live="polite">Copy password</span>
-                        </div>
-                    </button>
-                </div>
-                <div class="password-container" id="password-2">
-                    <p></p>
-                    <button aria-labelledby="tooltip-2" type="button">
-                        <img aria-hidden="true" src="assets/copy.svg" alt="" />
-                        <div class="tooltip-wrapper" aria-live="polite">
-                            <span id="tooltip-2" class="tooltip" >Copy password</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
+        </main>
         <script src="index.js"></script>
     </body>
 </html>

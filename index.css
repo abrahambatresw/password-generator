@@ -44,7 +44,7 @@ body {
     align-items: center;
 }
 
-.header, form, .passwords-display-section {
+.header, form, .passwords-display-section, main, header {
     max-width: 600px;
     width: 100%;
 }
